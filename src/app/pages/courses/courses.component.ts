@@ -21,7 +21,7 @@ export class CoursesComponent {
       icon: 'bi-microsoft',
       category: 'OFFICE PRODUCTIVITY',
       title: 'Microsoft Office Suite',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85',
+      image: 'assets/images/officesuite.png',
       imageAlt: 'Laptop and workspace for office productivity training',
       description: 'Develop essential office skills using Microsoft Word, Excel and PowerPoint.',
       topics: [
@@ -49,7 +49,7 @@ export class CoursesComponent {
       icon: 'bi-globe',
       category: 'DIGITAL LITERACY',
       title: 'Internet & Digital Skills',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85',
+      image: 'assets/images/internet.png',
       imageAlt: 'Learner using online tools on a laptop',
       description: 'Learn to navigate the internet and use essential online services confidently.',
       topics: [
@@ -91,7 +91,7 @@ export class CoursesComponent {
       icon: 'bi-cloud',
       category: 'CLOUD PRODUCTIVITY',
       title: 'Google Workspace',
-      image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85',
+      image: 'assets/images/google.png',
       imageAlt: 'Collaborative workspace for cloud productivity tools',
       description: "Learn Google's cloud-based tools for communication, productivity and collaboration.",
       topics: [
