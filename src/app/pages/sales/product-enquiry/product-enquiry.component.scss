@@ -1,0 +1,178 @@
+.product-enquiry-section {
+  background: #f5f7fa;
+  scroll-margin-top: 100px;
+}
+
+.product-enquiry-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  align-items: start;
+  gap: 48px;
+}
+
+.enquiry-copy h2 {
+  margin: 12px 0;
+  color: #0b1f3a;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.2;
+}
+
+.enquiry-copy > p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.enquiry-assurance {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 22px;
+  color: #1769aa;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.enquiry-assurance i {
+  color: #f58220;
+  font-size: 20px;
+}
+
+.product-enquiry-form {
+  padding: 28px;
+  border: 1px solid #e5eaf0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
+}
+
+.product-enquiry-form h3 {
+  color: #0b1f3a;
+  font-size: 22px;
+}
+
+.form-required-note {
+  margin: 4px 0 18px;
+  color: #666;
+  font-size: 13px;
+}
+
+.form-required-note span,
+.form-field label span {
+  color: #c33;
+}
+
+.enquiry-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  color: #0b1f3a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #d5dce5;
+  border-radius: 6px;
+  background: #fff;
+  color: #111827;
+  font: inherit;
+  font-size: 14px;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #1769aa;
+  outline: 2px solid rgba(23, 105, 170, .15);
+}
+
+.form-field small {
+  color: #b42318;
+  font-size: 12px;
+}
+
+.form-message {
+  margin: 0 0 16px;
+  padding: 11px 13px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.success-message {
+  background: #eaf7ee;
+  color: #176b36;
+}
+
+.error-message {
+  background: #fff0ef;
+  color: #a32118;
+}
+
+.submit-enquiry {
+  margin-top: 18px;
+  border: 0;
+  cursor: pointer;
+}
+
+.submit-enquiry:disabled {
+  opacity: .7;
+  cursor: wait;
+}
+
+.whatsapp-followup {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 0 12px;
+  color: #168c48;
+  font-weight: 700;
+}
+
+.whatsapp-note {
+  margin-top: 8px;
+  color: #666;
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .product-enquiry-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .product-enquiry-form {
+    padding: 20px;
+  }
+
+  .enquiry-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field.full-width {
+    grid-column: auto;
+  }
+}

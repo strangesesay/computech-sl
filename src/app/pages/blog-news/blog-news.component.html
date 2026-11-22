@@ -1,0 +1,60 @@
+<section class="blog-hero">
+  <div class="container">
+    <span class="hero-label">COMPUTECH BLOG &amp; NEWS</span>
+    <h1>Ideas, Guides &amp; <span>Updates</span></h1>
+    <p>
+      Explore practical digital skills advice, technology guides
+      and updates from COMPUTECH.
+    </p>
+  </div>
+</section>
+
+<section class="blog-section section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">INSIGHTS &amp; GUIDES</span>
+      <h2>Practical Ideas for a Digital World</h2>
+      <p>Helpful starting points for learning, working and using technology.</p>
+    </div>
+
+    <div class="article-grid">
+      @for (article of visibleArticles; track article.title) {
+        <article class="article-card">
+          <div class="article-image">
+            <img [src]="article.image" [alt]="article.alt" loading="lazy">
+          </div>
+          <div class="article-content">
+            <span class="article-category">{{ article.category }}</span>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.summary }}</p>
+            <div class="article-meta">
+              <span><i class="bi bi-clock"></i> {{ article.readingTime }}</span>
+              <span>COMPUTECH</span>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+    <app-pagination
+      [totalItems]="articles.length"
+      [pageSize]="pageSize"
+      [currentPage]="currentPage"
+      (pageChange)="currentPage = $event">
+    </app-pagination>
+  </div>
+</section>
+
+<section class="news-section section">
+  <div class="container news-content">
+    <div class="news-icon"><i class="bi bi-newspaper"></i></div>
+    <span class="section-tag">NEWS &amp; UPDATES</span>
+    <h2>Updates from COMPUTECH</h2>
+    <p>
+      Company announcements and community updates will be shared here.
+      Contact our team if you would like to hear more about our work.
+    </p>
+    <a routerLink="/contact" class="btn-accent">
+      Get in Touch <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+</section>

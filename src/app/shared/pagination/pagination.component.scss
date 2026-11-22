@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 35px;
+}
+
+.pagination button {
+  display: grid;
+  place-items: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #e5eaf0;
+  border-radius: 6px;
+  background: #fff;
+  color: #0b1f3a;
+  font-weight: 700;
+}
+
+.pagination button:hover:not(:disabled),
+.pagination button.is-active {
+  border-color: #1769aa;
+  background: #1769aa;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}

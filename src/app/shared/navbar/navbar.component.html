@@ -1,0 +1,75 @@
+
+<!-- Top Information Bar -->
+<div class="top-bar">
+  <div class="container top-content">
+    <div class="top-left">
+      <span><i class="bi bi-geo-alt"></i> Makeni | Sierra Leone</span>
+      <span><i class="bi bi-envelope"></i> Technology Solutions</span>
+    </div>
+
+    <div class="top-right">
+      <span>Professional Technology Services</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Navigation -->
+<header class="main-header">
+  <div class="container nav-container">
+
+    <!-- Brand -->
+    <a routerLink="/" class="brand" (click)="closeMenu()">
+      <div class="brand-icon">
+        <img src="assets/images/computechlogo.jpg" alt="COMPUTECH symbol" />
+      </div>
+
+      <div class="brand-text">
+        <strong>COMPUTECH</strong>
+        <small>TECHNOLOGY SOLUTIONS</small>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/courses">Courses</a>
+      <a routerLink="/gallery">Gallery</a>
+      <a routerLink="/blog-news">Blog &amp; News</a>
+      <a routerLink="/sales">Computer Sales</a>
+      <a routerLink="/services">IT Solutions</a>
+    </nav>
+
+    <!-- Contact Button -->
+ <a routerLink="/contact" class="nav-contact">
+  Contact Us
+  <i class="bi bi-arrow-right"></i>
+</a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="mobileMenuOpen"
+      aria-label="Toggle navigation menu">
+
+      <i [class]="mobileMenuOpen ? 'bi bi-x-lg' : 'bi bi-list'"></i>
+    </button>
+
+  </div>
+
+  <!-- Mobile Navigation -->
+  @if (mobileMenuOpen) {
+    <nav class="mobile-nav">
+<a routerLink="/" (click)="closeMenu()">Home</a>
+<a routerLink="/about" (click)="closeMenu()">About</a>
+<a routerLink="/courses" (click)="closeMenu()">Courses</a>
+<a routerLink="/gallery" (click)="closeMenu()">Gallery</a>
+<a routerLink="/blog-news" (click)="closeMenu()">Blog &amp; News</a>
+<a routerLink="/sales" (click)="closeMenu()">Computer Sales</a>
+<a routerLink="/services" (click)="closeMenu()">IT Solutions</a>
+<a routerLink="/contact" class="btn-primary" (click)="closeMenu()">Contact Us</a>
+    </nav>
+  }
+</header>

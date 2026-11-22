@@ -1,0 +1,65 @@
+<section class="services-hero">
+  <div class="container">
+    <span class="hero-label">IT SOLUTIONS</span>
+    <h1>Technology Solutions for <span>People and Businesses</span></h1>
+    <p>
+      Practical IT support to help you get more from your devices,
+      systems and connectivity.
+    </p>
+    <a routerLink="/contact" class="btn-accent">
+      Discuss Your Needs <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<section class="section services-section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">HOW WE CAN HELP</span>
+      <h2>IT Services and Support</h2>
+      <p>Tell us what you are working on and we can discuss the next steps.</p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of visibleServices; track service.title) {
+        <article class="service-card">
+          <div class="service-icon"><i [class]="'bi ' + service.icon"></i></div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </article>
+      }
+    </div>
+    <app-pagination
+      [totalItems]="services.length"
+      [pageSize]="pageSize"
+      [currentPage]="currentPage"
+      (pageChange)="currentPage = $event">
+    </app-pagination>
+  </div>
+</section>
+
+<section class="service-process section">
+  <div class="container process-grid">
+    <div class="process-image">
+      <img
+        src="https://images.unsplash.com/photo-1581092918056-0c4c3a3f4f3a?auto=format&fit=crop&w=1000&q=85"
+        alt="Technician working on computer equipment">
+    </div>
+    <div class="process-content">
+      <span class="section-tag">A STRAIGHTFORWARD APPROACH</span>
+      <h2>Support That Starts With Listening</h2>
+      <p>
+        Every technology setup is different. We begin by understanding
+        what you need, then talk through practical options with you.
+      </p>
+      <ul>
+        <li><i class="bi bi-check-circle-fill"></i> Describe your technology challenge.</li>
+        <li><i class="bi bi-check-circle-fill"></i> Discuss suitable support or setup options.</li>
+        <li><i class="bi bi-check-circle-fill"></i> Agree on the next step with our team.</li>
+      </ul>
+      <a routerLink="/contact" class="text-link">
+        Contact our team <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>

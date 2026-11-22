@@ -1,0 +1,366 @@
+
+/* ABOUT HERO */
+.about-hero {
+  background: linear-gradient(120deg, #0b1f3a, #123c68);
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+
+  .hero-label {
+    color: #f58220;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 6vw, 62px);
+    font-weight: 800;
+    margin: 18px 0;
+  }
+
+  h1 span {
+    color: #f58220;
+  }
+
+  p {
+    max-width: 680px;
+    margin: 0 auto 30px;
+    color: #e0e8f1;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+}
+
+/* GENERAL */
+.section-tag {
+  color: #f58220;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 50px;
+
+  h2 {
+    color: #0b1f3a;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    margin: 12px 0;
+  }
+
+  p {
+    color: #666;
+  }
+}
+
+/* WHO WE ARE */
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.who-image {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #0b1f3a;
+  color: white;
+  padding: 17px 20px;
+  border-left: 4px solid #f58220;
+  border-radius: 5px;
+
+  i {
+    color: #f58220;
+    margin-right: 10px;
+  }
+}
+
+.who-content {
+  h2 {
+    color: #0b1f3a;
+    font-size: clamp(28px, 4vw, 39px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 15px 0 22px;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 15px;
+  }
+}
+
+.text-link {
+  display: inline-block;
+  color: #1769aa;
+  font-weight: 700;
+  margin-top: 10px;
+
+  &:hover {
+    color: #f58220;
+  }
+}
+
+/* MISSION AND VISION */
+.mission-section {
+  background: #f5f7fa;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.mission-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  border-top: 4px solid #1769aa;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+
+  h3 {
+    color: #0b1f3a;
+    font-size: 25px;
+    margin: 20px 0 12px;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+  }
+}
+
+.vision-card {
+  border-top-color: #f58220;
+}
+
+.mission-icon {
+  width: 60px;
+  height: 60px;
+  background: #eaf2fa;
+  color: #1769aa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+}
+
+.vision-card .mission-icon {
+  background: #fff1e5;
+  color: #f58220;
+}
+
+/* CORE VALUES */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.value-card {
+  padding: 30px 22px;
+  border: 1px solid #e8edf2;
+  border-radius: 10px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    border-color: #1769aa;
+  }
+
+  i {
+    color: #f58220;
+    font-size: 35px;
+  }
+
+  h3 {
+    color: #0b1f3a;
+    font-size: 19px;
+    margin: 20px 0 10px;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+/* WHY CHOOSE US */
+.why-section {
+  background: #f5f7fa;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.why-content {
+  h2 {
+    color: #0b1f3a;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 15px 0;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.8;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+  }
+
+  li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: #444;
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  li i {
+    color: #f58220;
+    margin-top: 3px;
+  }
+}
+
+.why-image img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* CALL TO ACTION */
+.about-cta {
+  background: #0b1f3a;
+  color: white;
+  text-align: center;
+  padding: 85px 20px;
+
+  span {
+    color: #f58220;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: clamp(29px, 5vw, 43px);
+    font-weight: 800;
+    margin: 15px 0;
+  }
+
+  p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #d5dfeb;
+    line-height: 1.8;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-accent,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 25px;
+  border-radius: 5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-accent {
+  background: #f58220;
+  color: white;
+
+  &:hover {
+    background: #dc6b10;
+    color: white;
+  }
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+
+  &:hover {
+    background: white;
+    color: #0b1f3a;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .who-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 75px 15px;
+  }
+
+  .mission-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .who-image img,
+  .why-image img {
+    height: 300px;
+  }
+
+  .mission-card {
+    padding: 28px;
+  }
+}

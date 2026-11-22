@@ -1,0 +1,250 @@
+
+<!-- ABOUT HERO -->
+<section class="about-hero">
+  <div class="container">
+    <span class="hero-label">GET TO KNOW US</span>
+    <h1>About <span>COMPUTECH</span></h1>
+    <p>
+      Empowering individuals and businesses through technology,
+      digital education and innovative IT solutions.
+    </p>
+    <a routerLink="/contact" class="btn-accent">
+      Talk to Us <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="who-section section">
+  <div class="container who-grid">
+
+    <div class="who-image">
+      <img
+        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=85"
+        alt="People collaborating in a technology workspace">
+      <div class="image-caption">
+        <i class="bi bi-cpu"></i>
+        <span>Technology. Skills. Solutions.</span>
+      </div>
+    </div>
+
+    <div class="who-content">
+      <span class="section-tag">WHO WE ARE</span>
+      <h2>Building Skills. Connecting People. Creating Opportunities.</h2>
+
+      <p>
+        COMPUTECH is a technology-focused institution dedicated to
+        helping individuals, students and businesses make better use
+        of technology.
+      </p>
+
+      <p>
+        We provide practical computer training, technology products
+        and reliable IT services designed to meet the needs of today's
+        digital world.
+      </p>
+
+      <p>
+        Our goal is to make technology education accessible, practical
+        and useful, while helping our customers develop the skills and
+        confidence they need to succeed.
+      </p>
+
+      <a routerLink="/services" class="text-link">
+        Explore Our Services <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- MISSION AND VISION -->
+<section class="mission-section section">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-tag">OUR PURPOSE</span>
+      <h2>Our Mission & Vision</h2>
+      <p>What drives us and where we want to go.</p>
+    </div>
+
+    <div class="mission-grid">
+
+      <div class="mission-card">
+        <div class="mission-icon">
+          <i class="bi bi-bullseye"></i>
+        </div>
+        <h3>Our Mission</h3>
+        <p>
+          To empower people and organizations with practical digital
+          skills, accessible technology products and dependable IT
+          solutions that create meaningful opportunities.
+        </p>
+      </div>
+
+      <div class="mission-card vision-card">
+        <div class="mission-icon">
+          <i class="bi bi-eye"></i>
+        </div>
+        <h3>Our Vision</h3>
+        <p>
+          To become a trusted technology and digital skills institution
+          recognized for excellence, innovation and positive impact
+          in our communities.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="values-section section">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-tag">WHAT WE STAND FOR</span>
+      <h2>Our Core Values</h2>
+      <p>The principles that guide everything we do.</p>
+    </div>
+
+    <div class="values-grid">
+
+      <div class="value-card">
+        <i class="bi bi-award"></i>
+        <h3>Excellence</h3>
+        <p>We strive to deliver quality training, products and services.</p>
+      </div>
+
+      <div class="value-card">
+        <i class="bi bi-lightbulb"></i>
+        <h3>Innovation</h3>
+        <p>We embrace new ideas and technology to solve real problems.</p>
+      </div>
+
+      <div class="value-card">
+        <i class="bi bi-people"></i>
+        <h3>Customer Focus</h3>
+        <p>We put our students and customers at the centre of our work.</p>
+      </div>
+
+      <div class="value-card">
+        <i class="bi bi-shield-check"></i>
+        <h3>Integrity</h3>
+        <p>We believe in honesty, responsibility and professionalism.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OUR TEAM -->
+<section class="team-section mission-section section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">OUR TEAM</span>
+      <h2>The People Behind COMPUTECH</h2>
+      <p>
+        Sample team profiles for demonstration. Replace these names,
+        photos and details with your actual team information.
+      </p>
+    </div>
+
+    <div class="values-grid team-grid">
+      @for (member of teamMembers; track member.name) {
+        <article class="mission-card team-card">
+          <img
+            class="team-photo"
+            [src]="member.photo"
+            [alt]="'Sample portrait of ' + member.name"
+            width="400"
+            height="400"
+            loading="lazy">
+          <div class="team-content">
+            <h3>{{ member.name }}</h3>
+            <p class="team-role">{{ member.position }}</p>
+            <p>{{ member.details }}</p>
+            <p><strong>Specialty:</strong> {{ member.specialty }}</p>
+            <div class="team-links">
+              <a [href]="'mailto:' + member.email">
+                <i class="bi bi-envelope"></i> {{ member.email }}
+              </a>
+              <a [href]="member.linkedin" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section section">
+  <div class="container why-grid">
+
+    <div class="why-content">
+      <span class="section-tag">WHY COMPUTECH</span>
+      <h2>Your Partner in Technology and Digital Growth</h2>
+
+      <p>
+        Whether you want to develop your computer skills, purchase
+        technology products or find IT support, COMPUTECH is ready
+        to help.
+      </p>
+
+      <ul>
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          Practical and skills-focused computer training
+        </li>
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          Training designed for beginners and developing professionals
+        </li>
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          Computer systems and technology accessories
+        </li>
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          Technology support and IT solutions
+        </li>
+        <li>
+          <i class="bi bi-check-circle-fill"></i>
+          A commitment to helping people grow digitally
+        </li>
+      </ul>
+    </div>
+
+    <div class="why-image">
+      <img
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85"
+        alt="Person working with computer technology">
+    </div>
+
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="about-cta">
+  <div class="container">
+    <span>YOUR DIGITAL FUTURE STARTS HERE</span>
+    <h2>Ready to Grow with COMPUTECH?</h2>
+    <p>
+      Join our training programmes, explore our technology products
+      or connect with us for professional IT solutions.
+    </p>
+
+    <div class="cta-buttons">
+      <a routerLink="/registration" class="btn-accent">
+        Register Now <i class="bi bi-arrow-right"></i>
+      </a>
+
+      <a routerLink="/contact" class="btn-outline">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>

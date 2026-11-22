@@ -1,0 +1,124 @@
+<section #enquirySection class="product-enquiry-section section" id="product-enquiry">
+  <div class="container product-enquiry-layout">
+    <div class="enquiry-copy">
+      <span class="section-tag">PRODUCT ENQUIRY</span>
+      <h2>Interested in a product?</h2>
+      <p>
+        Tell us what you are looking for and our team will follow up about
+        availability and pricing. Your enquiry is sent to COMPUTECH through
+        Formspree.
+      </p>
+      <div class="enquiry-assurance">
+        <i class="bi bi-envelope-check" aria-hidden="true"></i>
+        <span>You'll receive a confirmation after the form is submitted.</span>
+      </div>
+    </div>
+
+    <form
+      class="product-enquiry-form"
+      [formGroup]="enquiryForm"
+      (ngSubmit)="submitEnquiry()"
+      novalidate>
+      <h3>Send an enquiry</h3>
+      <p class="form-required-note">Fields marked <span aria-hidden="true">*</span> are required.</p>
+
+      @if (successMessage) {
+        <div class="form-message success-message" role="status">{{ successMessage }}</div>
+      }
+      @if (errorMessage) {
+        <div class="form-message error-message" role="alert">{{ errorMessage }}</div>
+      }
+
+      <div class="enquiry-form-grid">
+        <div class="form-field">
+          <label for="enquiry-name">Full name <span>*</span></label>
+          <input
+            id="enquiry-name"
+            name="fullName"
+            type="text"
+            autocomplete="name"
+            formControlName="fullName"
+            (input)="clearMessages()"
+            [attr.aria-invalid]="enquiryForm.controls.fullName.touched && enquiryForm.controls.fullName.invalid">
+          @if (enquiryForm.controls.fullName.touched && enquiryForm.controls.fullName.invalid) {
+            <small>Please enter your name.</small>
+          }
+        </div>
+
+        <div class="form-field">
+          <label for="enquiry-email">Email address <span>*</span></label>
+          <input
+            id="enquiry-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            formControlName="email"
+            (input)="clearMessages()"
+            [attr.aria-invalid]="enquiryForm.controls.email.touched && enquiryForm.controls.email.invalid">
+          @if (enquiryForm.controls.email.touched && enquiryForm.controls.email.hasError('required')) {
+            <small>Please enter your email address.</small>
+          } @else if (enquiryForm.controls.email.touched && enquiryForm.controls.email.hasError('email')) {
+            <small>Enter a valid email address.</small>
+          }
+        </div>
+
+        <div class="form-field">
+          <label for="enquiry-phone">Phone number</label>
+          <input
+            id="enquiry-phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            formControlName="phone"
+            (input)="clearMessages()">
+        </div>
+
+        <div class="form-field">
+          <label for="enquiry-product">Product or service <span>*</span></label>
+          <select
+            id="enquiry-product"
+            name="product"
+            formControlName="product"
+            (change)="clearMessages()"
+            [attr.aria-invalid]="enquiryForm.controls.product.touched && enquiryForm.controls.product.invalid">
+            <option value="" disabled>Select an item</option>
+            @for (option of options; track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
+          @if (enquiryForm.controls.product.touched && enquiryForm.controls.product.invalid) {
+            <small>Please choose a product or service.</small>
+          }
+        </div>
+
+        <div class="form-field full-width">
+          <label for="enquiry-message">How can we help?</label>
+          <textarea
+            id="enquiry-message"
+            name="message"
+            rows="4"
+            formControlName="message"
+            (input)="clearMessages()"
+            placeholder="Ask about availability, pricing or product details."></textarea>
+        </div>
+      </div>
+
+      <button class="btn-primary submit-enquiry" type="submit" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Sending enquiry...' : 'Send enquiry' }}
+        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </button>
+
+      @if (whatsappEnquiryUrl) {
+        <a
+          class="whatsapp-followup"
+          [href]="whatsappEnquiryUrl"
+          target="_blank"
+          rel="noopener noreferrer">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i>
+          Continue on WhatsApp
+        </a>
+        <p class="whatsapp-note">WhatsApp opens a ready-to-send message. Review it and tap Send to contact us.</p>
+      }
+    </form>
+  </div>
+</section>

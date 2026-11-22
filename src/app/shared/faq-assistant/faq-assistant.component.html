@@ -1,0 +1,66 @@
+<button
+  class="assistant-launcher"
+  type="button"
+  (click)="toggleAssistant()"
+  [attr.aria-expanded]="isOpen"
+  aria-controls="faq-assistant-panel"
+  aria-label="Open COMPUTECH FAQ assistant">
+  <i class="bi" [class.bi-chat-dots-fill]="!isOpen" [class.bi-x-lg]="isOpen" aria-hidden="true"></i>
+  <span>{{ isOpen ? 'Close assistant' : 'Ask a question' }}</span>
+</button>
+
+@if (isOpen) {
+  <section
+    class="assistant-panel"
+    id="faq-assistant-panel"
+    role="dialog"
+    aria-labelledby="faq-assistant-title">
+    <header class="assistant-header">
+      <div>
+        <h2 id="faq-assistant-title">COMPUTECH FAQ</h2>
+        <p>Website information assistant</p>
+      </div>
+      <button
+        class="close-button"
+        type="button"
+        (click)="toggleAssistant()"
+        aria-label="Close FAQ assistant">
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <div class="conversation" role="log" aria-live="polite" aria-relevant="additions">
+      @for (message of messages; track $index) {
+        <p class="chat-message" [class.from-user]="message.sender === 'user'">
+          {{ message.text }}
+        </p>
+      }
+    </div>
+
+    @if (messages.length === 1) {
+      <div class="suggestions" aria-label="Suggested questions">
+        @for (suggestedQuestion of suggestedQuestions; track suggestedQuestion) {
+          <button type="button" (click)="askSuggestedQuestion(suggestedQuestion)">
+            {{ suggestedQuestion }}
+          </button>
+        }
+      </div>
+    }
+
+    <form class="question-form" (ngSubmit)="sendMessage()">
+      <label class="visually-hidden" for="faq-question">Ask a question</label>
+      <input
+        id="faq-question"
+        name="question"
+        type="text"
+        [(ngModel)]="question"
+        placeholder="Ask about courses, services..."
+        autocomplete="off">
+      <button type="submit" [disabled]="!question.trim()" aria-label="Send question">
+        <i class="bi bi-send-fill" aria-hidden="true"></i>
+      </button>
+    </form>
+
+    <p class="assistant-note">Answers are based on information published on this website.</p>
+  </section>
+}

@@ -1,0 +1,11 @@
+<nav class="category-filter" aria-label="Filter items by category">
+  @for (category of categories; track category) {
+    <button
+      type="button"
+      [class.is-active]="selectedCategory === category"
+      [attr.aria-pressed]="selectedCategory === category"
+      (click)="selectCategory(category)">
+      {{ category }}
+    </button>
+  }
+</nav>

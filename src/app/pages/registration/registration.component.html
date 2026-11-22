@@ -1,0 +1,154 @@
+<section class="registration-hero">
+  <div class="container">
+    <span>STUDENT REGISTRATION</span>
+    <h1>Start Your <span>Learning Journey</span></h1>
+    <p>Share a few details and our team will follow up about your course.</p>
+  </div>
+</section>
+
+<section class="registration-section section">
+  <div class="container registration-layout">
+    <aside class="registration-info">
+      <span class="section-tag">TAKE THE NEXT STEP</span>
+      <h2>Register with COMPUTECH</h2>
+      <p>
+        Tell us how to reach you and which course you are interested in.
+        Our team will contact you with further information.
+      </p>
+      <div class="info-item">
+        <i class="bi bi-check-circle-fill"></i>
+        <span>Choose from practical computer and digital skills courses.</span>
+      </div>
+      <div class="info-item">
+        <i class="bi bi-check-circle-fill"></i>
+        <span>Let us know your preferred learning schedule.</span>
+      </div>
+      <div class="info-item">
+        <i class="bi bi-envelope"></i>
+        <span>Your registration is sent to COMPUTECH through Formspree.</span>
+      </div>
+    </aside>
+
+    <form
+      class="registration-form"
+      [formGroup]="registrationForm"
+      (ngSubmit)="submitRegistration()"
+      novalidate>
+      <div class="form-heading">
+        <h2>Course Registration Form</h2>
+        <p>Fields marked <span aria-hidden="true">*</span> are required.</p>
+      </div>
+
+      @if (successMessage) {
+        <div class="form-message success-message" role="status">{{ successMessage }}</div>
+      }
+      @if (errorMessage) {
+        <div class="form-message error-message" role="alert">{{ errorMessage }}</div>
+      }
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="fullName">Full name <span>*</span></label>
+          <input
+            id="fullName"
+            name="fullName"
+            type="text"
+            autocomplete="name"
+            formControlName="fullName"
+            [attr.aria-invalid]="registrationForm.controls.fullName.touched && registrationForm.controls.fullName.invalid">
+          @if (registrationForm.controls.fullName.touched && registrationForm.controls.fullName.hasError('required')) {
+            <small>Please enter your full name.</small>
+          }
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email address <span>*</span></label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            formControlName="email"
+            [attr.aria-invalid]="registrationForm.controls.email.touched && registrationForm.controls.email.invalid">
+          @if (registrationForm.controls.email.touched && registrationForm.controls.email.hasError('required')) {
+            <small>Please enter your email address.</small>
+          } @else if (registrationForm.controls.email.touched && registrationForm.controls.email.hasError('email')) {
+            <small>Enter a valid email address.</small>
+          }
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Phone number <span>*</span></label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            formControlName="phone"
+            [attr.aria-invalid]="registrationForm.controls.phone.touched && registrationForm.controls.phone.invalid">
+          @if (registrationForm.controls.phone.touched && registrationForm.controls.phone.invalid) {
+            <small>Please enter your phone number.</small>
+          }
+        </div>
+
+        <div class="form-field">
+          <label for="course">Course of interest <span>*</span></label>
+          <select
+            id="course"
+            name="course"
+            formControlName="course"
+            [attr.aria-invalid]="registrationForm.controls.course.touched && registrationForm.controls.course.invalid">
+            <option value="" disabled>Select a course</option>
+            <option>Microsoft Office Suite</option>
+            <option>Computer Fundamentals</option>
+            <option>Internet &amp; Digital Skills</option>
+            <option>AI &amp; Prompt Engineering</option>
+            <option>Typing &amp; Computer Productivity</option>
+            <option>Google Workspace</option>
+            <option>Not sure yet</option>
+          </select>
+          @if (registrationForm.controls.course.touched && registrationForm.controls.course.invalid) {
+            <small>Please select a course.</small>
+          }
+          @if (registrationForm.controls.course.value === 'Typing & Computer Productivity') {
+            <small class="google-course-warning" role="status">
+              This course is not listed in the Google Form; this registration will be sent through Formspree only.
+            </small>
+          }
+        </div>
+
+        <div class="form-field">
+          <label for="preferredSchedule">Preferred schedule</label>
+          <select id="preferredSchedule" name="preferredSchedule" formControlName="preferredSchedule">
+            <option value="">No preference</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </div>
+
+        <div class="form-field full-width">
+          <label for="message">Additional information</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            formControlName="message"
+            placeholder="Tell us about your goals or any questions you have."></textarea>
+        </div>
+      </div>
+
+      <button class="submit-button" type="submit" [disabled]="isSubmitting">
+        @if (isSubmitting) {
+          Sending...
+        } @else {
+          Submit Registration <i class="bi bi-arrow-right"></i>
+        }
+      </button>
+      <p class="form-disclaimer">
+        Your details will be sent to COMPUTECH through Formspree and Google Forms
+        to respond to this registration enquiry.
+      </p>
+    </form>
+  </div>
+</section>

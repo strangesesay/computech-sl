@@ -1,0 +1,159 @@
+.gallery-hero {
+  padding: 95px 20px;
+  background: linear-gradient(120deg, #0b1f3a, #123c68);
+  color: white;
+  text-align: center;
+
+  .hero-label {
+    color: #f58220;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    margin: 20px 0;
+    font-size: clamp(36px, 6vw, 58px);
+    font-weight: 800;
+  }
+
+  h1 span { color: #f58220; }
+
+  p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #e0e8f1;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+}
+
+.gallery-section { background: #f5f7fa; }
+
+.section-heading {
+  max-width: 680px;
+  margin: 0 auto 45px;
+  text-align: center;
+
+  .section-tag {
+    color: #f58220;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    color: #0b1f3a;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    margin: 12px 0;
+  }
+
+  p { color: #666; }
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.gallery-card {
+  overflow: hidden;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(11, 31, 58, .08);
+
+  &:hover img { transform: scale(1.05); }
+
+  figcaption {
+    padding: 18px 22px 22px;
+  }
+
+  figcaption span {
+    color: #f58220;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+  }
+
+  h3 {
+    margin-top: 6px;
+    color: #0b1f3a;
+    font-size: 20px;
+  }
+}
+
+.gallery-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0b1f3a;
+
+  img,
+  video,
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  img,
+  video {
+    object-fit: cover;
+  }
+
+  img {
+    transition: transform .4s;
+  }
+}
+
+.gallery-cta {
+  padding: 80px 20px;
+  background: #0b1f3a;
+  color: white;
+  text-align: center;
+
+  .container > span {
+    color: #f58220;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    margin: 15px 0;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+  }
+
+  p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: #d5dfeb;
+    line-height: 1.8;
+  }
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 25px;
+  border-radius: 6px;
+  background: #f58220;
+  color: white;
+  font-weight: 700;
+
+  &:hover { background: #dc6b10; }
+}
+
+@media (max-width: 850px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .gallery-hero { padding: 75px 15px; }
+  .gallery-grid { grid-template-columns: 1fr; }
+}

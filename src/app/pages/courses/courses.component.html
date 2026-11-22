@@ -1,0 +1,191 @@
+
+<!-- COURSES HERO -->
+<section class="courses-hero">
+  <div class="container">
+    <span class="hero-label">LEARN • PRACTISE • GROW</span>
+    <h1>Computer Training &amp; <span>Courses</span></h1>
+    <p>
+      Discover practical computer and digital skills programmes
+      designed to prepare you for education, employment and business.
+      Learn by doing with guidance from our training team.
+    </p>
+    <a routerLink="/registration" class="btn-accent">
+      Register for a Course <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="section courses-intro">
+  <div class="container">
+    <span class="section-tag">LEARNING AT COMPUTECH</span>
+    <h2>Practical Training for a Digital World</h2>
+    <p>
+      COMPUTECH training helps learners develop confidence and practical
+      knowledge in using technology. Whether you are a beginner, student,
+      job seeker or professional, there is an opportunity to build skills
+      for personal and career growth.
+    </p>
+  </div>
+</section>
+
+<!-- COURSE LIST -->
+<section class="course-list-section section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">OUR PROGRAMMES</span>
+      <h2>Available Training Areas</h2>
+      <p>Explore the subjects you can study at COMPUTECH.</p>
+    </div>
+
+    <app-category-filter
+      [categories]="categories"
+      [selectedCategory]="selectedCategory"
+      (selectedCategoryChange)="setCategory($event)">
+    </app-category-filter>
+
+    <div class="courses-grid">
+      @for (course of visibleCourses; track course.title) {
+        <article class="course-card">
+          <img class="course-image" [src]="course.image" [alt]="course.imageAlt" loading="lazy">
+          <div class="course-icon"><i [class]="'bi ' + course.icon"></i></div>
+          <span class="course-category">{{ course.category }}</span>
+          <h3>{{ course.title }}</h3>
+          <p>{{ course.description }}</p>
+          <ul>
+            @for (topic of course.topics; track topic) {
+              <li><i class="bi bi-check2"></i> {{ topic }}</li>
+            }
+          </ul>
+          <a routerLink="/registration" class="course-link">
+            Enquire / Register <i class="bi bi-arrow-right"></i>
+          </a>
+        </article>
+      }
+    </div>
+    <app-pagination
+      [totalItems]="filteredCourses.length"
+      [pageSize]="pageSize"
+      [currentPage]="currentPage"
+      (pageChange)="currentPage = $event">
+    </app-pagination>
+  </div>
+</section>
+
+<!-- TRAINING EXPERIENCE -->
+<section class="course-list-section section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">THE COMPUTECH EXPERIENCE</span>
+      <h2>Learn by Doing</h2>
+      <p>We focus on helping learners build skills they can use.</p>
+    </div>
+
+    <div class="courses-grid">
+      <article class="course-card">
+        <div class="course-icon"><i class="bi bi-laptop"></i></div>
+        <h3>Hands-on Learning</h3>
+        <p>Practise directly with computers and apply new skills to useful tasks.</p>
+      </article>
+      <article class="course-card">
+        <div class="course-icon"><i class="bi bi-person-workspace"></i></div>
+        <h3>Practical Guidance</h3>
+        <p>Get guidance as you learn new tools and develop your computer skills.</p>
+      </article>
+      <article class="course-card">
+        <div class="course-icon"><i class="bi bi-award"></i></div>
+        <h3>Supportive Learning</h3>
+        <p>
+          Build confidence in a supportive environment. Certificate opportunities
+          are available for qualifying completed programmes.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNING OUTCOMES -->
+<section class="outcomes-section section">
+  <div class="container outcomes-grid">
+    <div>
+      <span class="section-tag">YOUR LEARNING JOURNEY</span>
+      <h2>What You Gain from Training</h2>
+      <p>
+        Our goal is to help you turn computer knowledge into practical
+        skills that you can use in school, at work and in everyday life.
+      </p>
+
+      <div class="outcome-item">
+        <i class="bi bi-check-circle-fill"></i>
+        <span>Confidence using computers and digital tools.</span>
+      </div>
+      <div class="outcome-item">
+        <i class="bi bi-check-circle-fill"></i>
+        <span>Practical knowledge for academic and workplace tasks.</span>
+      </div>
+      <div class="outcome-item">
+        <i class="bi bi-check-circle-fill"></i>
+        <span>Improved digital communication and productivity.</span>
+      </div>
+      <div class="outcome-item">
+        <i class="bi bi-check-circle-fill"></i>
+        <span>Opportunity to demonstrate the skills you have learned.</span>
+      </div>
+    </div>
+
+    <div class="outcomes-image">
+      <img
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85"
+        alt="Student developing digital skills">
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING APPROACH -->
+<section class="outcomes-section section">
+  <div class="container outcomes-grid">
+    <div>
+      <span class="section-tag">HOW WE TEACH</span>
+      <h2>A Learning Experience Built Around You</h2>
+      <p>
+        Clear instruction and practical exercises help learners understand
+        new concepts and apply them with confidence.
+      </p>
+      <div class="outcome-item">
+        <i class="bi bi-1-circle-fill"></i>
+        <span><strong>Learn the basics</strong> — understand the tools and concepts you need.</span>
+      </div>
+      <div class="outcome-item">
+        <i class="bi bi-2-circle-fill"></i>
+        <span><strong>Practise what you learn</strong> — work through exercises and everyday tasks.</span>
+      </div>
+      <div class="outcome-item">
+        <i class="bi bi-3-circle-fill"></i>
+        <span><strong>Build your confidence</strong> — apply your skills at school, work and home.</span>
+      </div>
+    </div>
+    <div class="outcomes-image">
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85"
+        alt="Students learning together">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="courses-cta">
+  <div class="container">
+    <span>TAKE THE FIRST STEP</span>
+    <h2>Ready to Enrol in a Course?</h2>
+    <p>
+      Contact COMPUTECH or complete our registration form
+      to begin your digital skills journey.
+    </p>
+    <div class="cta-buttons">
+      <a routerLink="/registration" class="btn-accent">
+        Register Now <i class="bi bi-arrow-right"></i>
+      </a>
+      <a routerLink="/contact" class="btn-outline">Contact Us</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+:host {
+  display: block;
+}
+
+.category-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.category-filter button {
+  padding: 9px 16px;
+  border: 1px solid #e5eaf0;
+  border-radius: 999px;
+  background: #fff;
+  color: #0b1f3a;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.category-filter button:hover,
+.category-filter button.is-active {
+  border-color: #1769aa;
+  background: #1769aa;
+  color: #fff;
+}
+
+.category-filter button:focus-visible {
+  outline: 3px solid rgba(245, 130, 32, .45);
+  outline-offset: 2px;
+}
